@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1634218172 source:c:\users\anna\desktop\stc\1\projects\lab_2\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<stdlib.h>
+
+1634649616 source:c:\users\anna\desktop\stc\projects\lab_2\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<stdlib.h>
+	"technicalmeans.h"
+
+1634649616 c:\users\anna\desktop\stc\projects\lab_2\include\technicalmeans.h
+	<iostream>
+	<string.h>
+
+1634644118 source:c:\users\anna\desktop\stc\projects\lab_2\src\technicalmeans.cpp
+	"technicalmeans.h"
+

@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+// Объявление класса
+class Person
+{
+ public:
+ Person();
+ Person(std::string st, int y);
+ ~Person();
+ std::string getName();
+ void setName(std::string val);
+ int getYear();
+ void setYear(int val);
+ private:
+ std::string name;
+ int year;
+};
+// Программа, использующая класс
+int main()
+{
+ Person p1; // Вызов конструктора по умолчанию
+ Person p2("Kate",1977); // Вызов конструктора с параметрами
+ p1.setName("Anita");
+ p1.setYear(1978);
+ cout << p1.getName() << " " << p1.getYear() << endl;
+ cout << p2.getName() << " " << p2.getYear() << endl;
+ Person p3[3];
+ std::string sbuf;
+ int ybuf;
+ for(int i=0;i<3;i++)
+ {
+ cout <<"enter name->";
+ cin >> sbuf;
+ p3[i].setName(sbuf);
+ cout <<"enter year->";
+ cin >> ybuf;
+ p3[i].setYear(ybuf);
+ }
+ for(int i=0;i<3;i++)
+ cout << p3[i].getName() << " " << p3[i].getYear() << endl;
+ return 0;
+}
+
+// Реализация функций-членов класса
+Person::Person()
+{
+ //Конструктор по умолчанию
+name = "Noname" ;
+year = 0;
+}
+Person::Person(std::string st, int y)
+{
+ //Конструктор с параметрами
+ name = st;
+ year = y;
+}
+Person::~Person()
+{
+ //Деструктор по умолчанию, можно не включать в класс,
+// явно в программе не вызывается
+}
+std::string Person::getName()
+{
+ return name; // Возвращает значение свойства name
+}
+void Person::setName(std::string val)
+{
+ name = val; // Перезаписывает значение свойства name
+}
+int Person::getYear()
+{
+ return year; // Возвращает значение свойства year
+}
+void Person::setYear(int val)
+{
+ year = val; // Перезаписывает значение свойства year
+}

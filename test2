@@ -1,0 +1,104 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <stdlib.h>
+
+// Объявление класса
+class TechnicalMeans
+{
+public: // открытая часть класса
+    TechnicalMeans(); // Конструктор без параметров
+    TechnicalMeans(std::string title, int year); //Конструктор с параметрами
+    ~TechnicalMeans(); // Деструктор
+
+    //Методы, устанавливающий новое значение свойству
+     void setTitle(std::string title);
+   //  void setAuthor(std::string author);
+    // void setInventoryNumber(int inventory_number);
+     void setYear(int year);
+
+    //Методы, позволяющий прочитать значение свойства
+     std::string getTitle();
+   //  int setInventoryNumber();
+   //  std::string getAuthor();
+     int getYear();
+
+private: // закрытая часть класса
+ //   std::string author; //Фирма­изготовитель
+    std::string title; //Название технического средства
+    int year; //Год ввода в эксплуатацию
+  //  int inventory_number; //Инвентарный номер
+};
+
+    // Реализация функций-членов класса
+
+    //Конструктор по умолчанию
+    TechnicalMeans::TechnicalMeans()
+    {
+        title = "Noname" ;
+        year = 0;
+    }
+
+     //Конструктор с параметрами
+    TechnicalMeans::TechnicalMeans(std::string ntitle, int nyear)
+        : title(ntitle)
+        , year(nyear)
+    {}
+
+    TechnicalMeans::~TechnicalMeans()
+    {
+     //Деструктор по умолчанию, можно не включать в класс,
+    // явно в программе не вызывается
+    }
+
+    // Возвращает значение свойства title
+    std::string TechnicalMeans::getTitle()
+    {
+        return title;
+    }
+
+    // Перезаписывает значение свойства title
+    void TechnicalMeans::setTitle(std::string val)
+    {
+        this ->  title;
+    }
+
+    // Возвращает значение свойства year
+    int TechnicalMeans::getYear()
+    {
+        return year;
+    }
+
+    // Перезаписывает значение свойства year
+    void TechnicalMeans::setYear(int year)
+    {
+        this -> year;
+    }
+
+
+//программа испо
+int main()
+{
+     TechnicalMeans tm_obj1;                 // Вызов конструктора по умолчанию
+     TechnicalMeans tm_obj2("Kate",1977);    // Вызов конструктора с параметрами
+     tm_obj1.setTitle("Anita");
+     tm_obj1.setYear(1978);
+     std::cout << tm_obj1.getTitle() << " " << tm_obj1.getYear() << std::endl;
+     std::cout << tm_obj2.getTitle() << " " << tm_obj2.getYear() << std::endl;
+     std::cout << std::endl;
+
+     TechnicalMeans tm_obj3[2];
+     std::string sbuf;
+     int ybuf;
+     for(int i=0;i<2;i++)
+     {
+         std::cout <<"enter title: ";
+         std::cin >> sbuf;
+         tm_obj3[i].setTitle(sbuf);
+         std::cout <<"enter year: ";
+         std::cin >> ybuf;
+         tm_obj3[i].setYear(ybuf);
+     }
+ for(int i=0;i<2;i++)
+ std::cout << tm_obj3[i].getTitle() << " " << tm_obj3[i].getYear() << std::endl;
+ return 0; }
